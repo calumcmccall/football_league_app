@@ -9,7 +9,10 @@
         
             <li>
                 {{ club.club_name }}
-                <form action="/clubs/{{ club.id }}/delete" method="post">
+                <form action="/clubs/{{ club.id }}/edit">
+                    <input type="submit" value="edit">
+                </form>
+                <form action="/clubs/{{ club.id }}/delete" method="POST">
                     <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
                 </form>
             </li>

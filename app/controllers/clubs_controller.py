@@ -24,6 +24,20 @@ def create_club():
     club_repository.save(new_club)
     return redirect("/clubs")
 
+# EDIT
+@clubs_blueprint.route("/clubs/<id>/edit")
+def edit_club(id):
+    club = club_repository.select(id)
+    return render_template("clubs/edit.html", club=club)
+
+# UPDATE
+@clubs_blueprint.route("/clubs/<id>", methods=["POST"])
+def update_club(id):
+    club_name = request.form["club_name"]
+    club = Club(club_name, id)
+    club_repository.update(club)
+    return redirect("/clubs")
+
 # DELETE
 @clubs_blueprint.route("/clubs/<id>/delete", methods=["POST"])
 def delete_club(id):

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h1>Edit a club</h1>
+
+    <form action="/clubs/{{ club.id }}" method="POST"> 
+        <div>
+            <label for="club_name">Club name:</label>
+            <input type="text" id="club_name" name="club_name" value="{{ club.club_name }}">
+            <input type="submit">
+        </div>
+    </form>
+
+{% endblock content %}
