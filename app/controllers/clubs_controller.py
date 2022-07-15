@@ -23,3 +23,9 @@ def create_club():
     new_club = Club(club_name)
     club_repository.save(new_club)
     return redirect("/clubs")
+
+# DELETE
+@clubs_blueprint.route("/clubs/<id>/delete", methods=["POST"])
+def delete_club(id):
+    club_repository.delete(id)
+    return redirect("/clubs")

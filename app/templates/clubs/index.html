@@ -9,10 +9,17 @@
         
             <li>
                 {{ club.club_name }}
+                <form action="/clubs/{{ club.id }}/delete" method="post">
+                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
+                </form>
             </li>
         
         {% endfor %}
 
     </ul>
+
+    <form action="/clubs/new">
+        <input type="submit" value="Create new club">
+    </form>
 
 {% endblock content %}
