@@ -12,18 +12,18 @@ Table matches as M {
 
 Table clubs as C {
   id int [pk, increment]
-  name varchar
+  club_name varchar
 }
 
 Table teams as T {
   id int [pk, increment]
-  name varchar
+  team_name varchar
   club_id int
 }
 
-Table match_day_team as MD {
+Table match_day_teams as MD {
   id int [pk, increment]
-  squad_id int
+  team_id int
  }
 
 Table players as P {
@@ -54,9 +54,9 @@ Table leagues as L {
 // Ref: M.home_team > squads.id  
 // Ref: merchants.country_code > countries.code
 Ref: C.id < T.club_id
-Ref: T.id < MD.squad_id
-Ref: M.home_team < match_day_team.id
-Ref: M.away_team < match_day_team.id
+Ref: T.id < MD.team_id
+Ref: M.home_team < match_day_teams.id
+Ref: M.away_team < match_day_teams.id
 Ref: L.id < matches.league_id
 Ref: D.player_id < P.id
 Ref: D.team_id < MD.id
