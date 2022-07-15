@@ -9,3 +9,10 @@ def select_all():
         club = Club(result["club_name"], result["id"])
         clubs.append(club)
     return clubs
+
+def save(club):
+    sql = "INSERT INTO clubs (club_name) VALUES (%s) RETURNING id"
+    values = [club.club_name]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    club.id = id

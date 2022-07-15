@@ -10,3 +10,16 @@ clubs_blueprint = Blueprint("clubs", __name__)
 def clubs():
     clubs = club_repository.select_all()
     return render_template("clubs/index.html", clubs=clubs)
+
+# NEW
+@clubs_blueprint.route("/clubs/new")
+def new_club():
+    return render_template("clubs/new.html")
+
+# CREATE
+@clubs_blueprint.route("/clubs", methods=["POST"])
+def create_club():
+    club_name = request.form['club_name']
+    new_club = Club(club_name)
+    club_repository.save(new_club)
+    return redirect("/clubs")
