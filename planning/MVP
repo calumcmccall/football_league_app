@@ -1,0 +1,36 @@
+MVP:
+
+An app that contains a database of teams, each belonging to a club, that will play matches against other teams. 
+
+* The app should allow the user to create, edit and remove teams in the league
+    * Team
+        * Create
+        * Edit
+        * Remove
+
+* The user should be able to create new matches
+    * Match
+        * Create
+
+* There should be a way to display all the matches for a team and all the teams involved in a match
+    * Display a team’s matches
+    * Display the teams involved in a match
+
+* The app should display if a game was won or lost
+
+
+Extensions:
+
+* Display the league, based upon the results of every match
+    * Calculating points
+    * Calculating goal difference
+
+
+* Have match day teams made up of players
+    * Assign goals scored to players
+    * Assign yellow/red cards to players
+    * Display the stats of players
+
+* Display fixtures
+    * Display all fixtures on a given matchday
+    * Display all matchdays and the fixtures being played
