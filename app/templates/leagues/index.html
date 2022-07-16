@@ -8,7 +8,7 @@
         {% for league in leagues %}
             
             <li>
-                {{ league.league_name }}
+                <a href="/leagues/{{ league.id }}">{{ league.league_name }}</a>
                 <form action="/leagues/{{ league.id }}/edit">
                     <input type="submit" value="edit">
                 </form>

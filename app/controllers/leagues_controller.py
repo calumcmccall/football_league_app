@@ -12,6 +12,12 @@ def leagues():
     leagues = league_repository.select_all()
     return render_template("/leagues/index.html", leagues=leagues)
 
+# SHOW
+@leagues_blueprint.route("/leagues/<id>")
+def show_league(id):
+    league = league_repository.select(id)
+    return render_template("leagues/show.html", league=league)
+
 # NEW
 @leagues_blueprint.route("/leagues/new")
 def new_league():
@@ -33,7 +39,7 @@ def edit_league(id):
 
 # UPDATE
 @leagues_blueprint.route("/leagues/<id>", methods=["POST"])
-def update_leage(id):
+def update_league(id):
     league_name = request.form["league_name"]
     league = League(league_name, id)
     league_repository.update(league)

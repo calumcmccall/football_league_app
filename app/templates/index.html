@@ -3,4 +3,12 @@
     
     <h1>Hello World</h1>
 
+    {% for league in all_leagues %}
+        
+        <h4>
+            <a href="/leagues/{{ league.id }}">{{ league.league_name }}</a>
+        </h4>
+
+    {% endfor %}
+
 {% endblock content %} 
