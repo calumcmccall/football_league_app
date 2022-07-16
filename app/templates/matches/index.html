@@ -8,11 +8,24 @@
         {% for match in matches %}
             
             <li>
-                {{ match.home_team.team_name}} {{ match.away_team.team_name }}
-                <form action="/matches/{{ match.id }}/edit">
-                    <input type="submit" value="edit">
-                </form>
-                <form action="/matchs/{{ match.id }}/delete">
+
+                {% for team in teams %}
+                    {% if team.id == match.home_team.team_id %}
+                        {{ team.club.club_name }} - {{ match.home_team_score }}
+                    {% endif %}
+                    {% endfor %}
+
+                    v
+
+                    {% for team in teams %}
+                    {% if team.id == match.away_team.team_id %}
+                        {{ team.club.club_name }} - {{ match.away_team_score }}
+                    {% endif %}
+                {% endfor %}
+
+                {{ match.league.league_name }}
+
+                <form action="/matches/{{ match.id }}/delete" method="POST">
                     <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
                 </form>
             </li>
