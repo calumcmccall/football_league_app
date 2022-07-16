@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h1>Edit a team</h1>
+
+    <form action="/teams/{{ team.id }}" method="POST">
+        <div>
+            <label for="team_name">Team name:</label>
+            <input type="text" id="team_name" name="team_name" value="{{ team.team_name }}">
+            <select name="club_id" id="club">
+                {% for club in clubs %}
+                    <option value="{{ club.id }}" 
+                        {% if team.club.id == club.id %}
+                            selected
+                        {% endif %}
+                    >{{ club.club_name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit">
+        </div>
+    </form>
+
+{% endblock content %}
