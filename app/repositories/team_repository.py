@@ -27,7 +27,7 @@ def select(id):
 
 def save(team):
     sql = "INSERT INTO teams (team_name, club_id) VALUES (%s, %s) RETURNING id"
-    values = [team.team_name, team.club_id]
+    values = [team.team_name, team.club.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
     team.id = id

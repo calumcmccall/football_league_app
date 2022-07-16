@@ -16,7 +16,7 @@ def teams():
 @teams_blueprint.route("/teams/new")
 def new_team():
     clubs = club_repository.select_all()
-    return render_template("teams/new.htmls", clubs=clubs)
+    return render_template("teams/new.html", clubs=clubs)
 
 # CREATE
 @teams_blueprint.route("/teams", methods=["POST"])
