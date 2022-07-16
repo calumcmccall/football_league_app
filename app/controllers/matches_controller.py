@@ -10,3 +10,8 @@ matches_blueprint = Blueprint("matches", __name__)
 def matches():
     matches = match_repository.select_all()
     return render_template("matches/index.html", matches=matches)
+
+# new
+@matches_blueprint.route("/matches/new")
+def new_match():
+    return render_template("matches/new.html")

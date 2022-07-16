@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h1>Matches</h1>
+
+    <ul>
+
+        {% for match in matches %}
+            
+            <li>
+                {{ match.home_team.team_name}} {{ match.away_team.team_name }}
+                <form action="/matches/{{ match.id }}/edit">
+                    <input type="submit" value="edit">
+                </form>
+                <form action="/matchs/{{ match.id }}/delete">
+                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
+                </form>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <form action="/matches/new">
+        <input type="submit" value="Create new match">
+    </form>
+
+{% endblock content %}
