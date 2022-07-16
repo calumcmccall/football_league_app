@@ -6,20 +6,33 @@
     <form action="/matches" method="POST">
         <div>
             <label for="home_team">Home team:</label>
-            
+            <select name="home_team" id="home_team">
+                {% for team in teams %}
+                    <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                {% endfor %}
+            </select>
 
             <label for="away_team">Away team:</label>
-
+            <select name="away_team" id="away_team">
+                {% for team in teams %}
+                    <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                {% endfor %}
+            </select>
 
             <label for="home_team_score">Home team score:</label>
-
+            <input type="number" id="home_team_score" name="home_team_score">
 
             <label for="away_team_score">Away team score:</label>
+            <input type="number" id="away_team_score" name="away_team_score">
 
-
-            <label for="league_id">League: </label>
+            <label for="league">League: </label>
+            <select name="league" id="league">
+                {% for league in leagues %}
+                    <option value="{{ league.id }}">{{ league.league_name }}</option>
+                {% endfor %}
+            </select>
             
-
+            <input type="submit">
 
         </div>
     </form>

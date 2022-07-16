@@ -34,7 +34,7 @@ def save(match):
     values = [match.home_team.id, match.away_team.id, match.home_team_score, match.away_team_score, match.league.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
-    match.it = id
+    match.id = id
 
 def update(match):
     sql = "UPDATE matches SET (home_team, away_team, home_team_score, away_team_score, league_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
