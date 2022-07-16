@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h1>Leagues</h1>
+
+    <ul>
+
+        {% for league in leagues %}
+            
+            <li>
+                {{ league.league_name }}
+                <form action="/leagues/{{ league.id }}/edit">
+                    <input type="submit" value="edit">
+                </form>
+                <form action="/leagues/{{ league.id }}/delete" method="POST">
+                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
+                </form>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <form action="/leagues/new">
+        <input type="submit" value="Create new league">
+    </form>
+
+{% endblock content %}
