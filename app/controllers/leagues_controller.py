@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.league import League
