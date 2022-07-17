@@ -45,3 +45,16 @@ def delete(id):
     sql = "DELETE FROM matches WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def matches_for_league(id):
+    matches = []
+    sql = "SELECT * FROM matches WHERE league_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for result in results:
+        home_team = match_day_team_repository.select(result["home_team"])
+        away_team = match_day_team_repository.select(result["away_team"])
+        league = league_repository.select(result["league_id"])
+        match = Match(home_team, away_team, result["home_team_score"], result["away_team_score"], league, result["id"])
+        matches.append(match)
+    return matches

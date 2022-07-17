@@ -2,6 +2,8 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.league import League
 import repositories.league_repository as league_repository
+import repositories.match_repository as match_repository
+import repositories.team_repository as team_repository
 
 leagues_blueprint = Blueprint("leagues", __name__)
 
@@ -15,7 +17,9 @@ def leagues():
 @leagues_blueprint.route("/leagues/<id>")
 def show_league(id):
     league = league_repository.select(id)
-    return render_template("leagues/show.html", league=league)
+    matches = match_repository.matches_for_league(id)
+    teams = team_repository.select_all()
+    return render_template("leagues/show.html", league=league, matches=matches, team_repository=team_repository, teams=teams)
 
 # NEW
 @leagues_blueprint.route("/leagues/new")
