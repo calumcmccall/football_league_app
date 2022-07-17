@@ -30,7 +30,8 @@ def new_league():
 @leagues_blueprint.route("/leagues", methods=["POST"])
 def create_league():
     league_name = request.form['league_name']
-    new_league = League(league_name)
+    team_type = request.form['team_type']
+    new_league = League(league_name, team_type)
     league_repository.save(new_league)
     return redirect("/leagues")
 
@@ -44,7 +45,8 @@ def edit_league(id):
 @leagues_blueprint.route("/leagues/<id>", methods=["POST"])
 def update_league(id):
     league_name = request.form["league_name"]
-    league = League(league_name, id)
+    team_type = request.form["team_type"]
+    league = League(league_name, team_type, id)
     league_repository.update(league)
     return redirect("/leagues")
 

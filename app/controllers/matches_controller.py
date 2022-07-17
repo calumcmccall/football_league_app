@@ -37,6 +37,7 @@ def create_match():
 
     home_team_score = request.form["home_team_score"]
     away_team_score = request.form["away_team_score"]
+    
     league = league_repository.select(request.form["league"])
     new_match = Match(home_team_for_match, away_team_for_match, home_team_score, away_team_score, league)
     
