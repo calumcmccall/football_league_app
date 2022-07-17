@@ -3,7 +3,21 @@
 
     <h1>{{ league.league_name }}</h1>
 
+    <h2>Clubs</h2>
+    <ul>
+        {% for team in teams %}
+
+            {% if team.team_name == league.team_type %}
+                <li>
+                    {{ team.club.club_name }}
+                </li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+
     <table>
+        <h2>Fixtures</h2>
         <tr>
             <th>Home Team</th>
             <th>Score</th>
@@ -25,7 +39,7 @@
             </tr>
         {% endfor %}
     </table>
-
+    
     <form action="/teams/new/{{ league.id }}">
         <input type="submit" value="Add a club to this league">
     </form>
