@@ -3,6 +3,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.team import Team
 import repositories.team_repository as team_repository
 import repositories.club_repository as club_repository
+import repositories.league_repository as league_repository
 
 teams_blueprint = Blueprint("teams", __name__)
 
@@ -13,15 +14,16 @@ def teams():
     return render_template("teams/index.html", teams=teams)
 
 # NEW
-@teams_blueprint.route("/teams/new")
-def new_team():
+@teams_blueprint.route("/teams/new/<id>")
+def new_team(id):
     clubs = club_repository.select_all()
-    return render_template("teams/new.html", clubs=clubs)
+    league = league_repository.select(id)
+    return render_template("teams/new.html", clubs=clubs, league=league)
 
 # CREATE
-@teams_blueprint.route("/teams", methods=["POST"])
-def create_team():
-    team_name = request.form["team_name"]
+@teams_blueprint.route("/teams/<team_type>", methods=["POST"])
+def create_team(team_type):
+    team_name = team_type
     club_id = request.form["club_id"]
     club = club_repository.select(club_id)
     new_team = Team(team_name, club)

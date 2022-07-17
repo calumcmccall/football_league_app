@@ -3,10 +3,8 @@
     
     <h1>Add a new team</h1>
 
-    <form action="/teams" method="POST">
+    <form action="/teams/{{ league.team_type }}" method="POST">
         <div>
-            <label for="team_name">Team name:</label>
-            <input type="text" id="team_name" name="team_name">
             <label for="club">Club:</label>
             <select name="club_id" id="club">
                 {% for club in clubs %}
