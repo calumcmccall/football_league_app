@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.club import Club
+from models.team import Team
 
 def select_all():
     clubs = []
@@ -36,3 +37,16 @@ def delete(id):
     sql = "DELETE FROM clubs WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def find_teams_for_club(id):
+    teams = []
+
+    sql = "SELECT teams.* FROM teams INNER JOIN clubs on teams.club_id = clubs.id WHERE club_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        team = Team(result["team_name"], select(id), result["id"])
+        teams.append(team)
+
+    return teams

@@ -9,7 +9,7 @@
 
             {% if team.team_name == league.team_type %}
                 <li>
-                    {{ team.club.club_name }}
+                    <a href="/clubs/{{ team.club.id }}">{{ team.club.club_name }}</a>
                 </li>
             {% endif %}
 
@@ -36,13 +36,13 @@
             <tr>
                 <td>
                     {{
-                        team_repository.select(match.home_team.team_id).club.club_name
+                        match.home_team.team_id.club.club_name
                     }}
                 </td>
                 <td> {{ match.home_team_score}} - {{ match.away_team_score }}  </td>
                 <td>
                     {{
-                        team_repository.select(match.away_team.team_id).club.club_name
+                        match.away_team.team_id.club.club_name
                     }}
                 </td>
             </tr>

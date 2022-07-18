@@ -22,4 +22,4 @@ def main():
     return render_template('index.html', all_leagues=all_leagues)
 
 if __name__ == '__main__':
-    app.run
+    app.run(debug=True)
