@@ -16,6 +16,10 @@
         {% endfor %}
     </ul>
 
+    <form action="/teams/new/{{ league.id }}">
+        <input type="submit" value="Add a club to this league">
+    </form>
+
     <table>
         <h2>Fixtures</h2>
         <tr>
@@ -39,9 +43,9 @@
             </tr>
         {% endfor %}
     </table>
-    
-    <form action="/teams/new/{{ league.id }}">
-        <input type="submit" value="Add a club to this league">
-    </form>
+
+    <table>
+        <h2>League Table</h2>
+    </table>
 
 {% endblock content %}

@@ -6,10 +6,17 @@
     <form action="/teams/{{ league.team_type }}" method="POST">
         <div>
             <label for="club">Club:</label>
+            
             <select name="club_id" id="club">
+
                 {% for club in clubs %}
-                    <option value="{{ club.id }}">{{ club.club_name }}</option>
+                    {% if club.club_name not in clubs_in_league %}
+                        
+                        <option value="{{ club.id }}">{{ club.club_name }}</option>
+
+                    {% endif %}
                 {% endfor %}
+
             </select>
             <input type="submit">
         </div>

@@ -16,9 +16,12 @@ def teams():
 # NEW
 @teams_blueprint.route("/teams/new/<id>")
 def new_team(id):
-    clubs = club_repository.select_all()
     league = league_repository.select(id)
-    return render_template("teams/new.html", clubs=clubs, league=league)
+    team_type = league.team_type
+    clubs_in_league = team_repository.clubs_in_league(team_type)
+    teams = team_repository.select_all()
+    clubs = club_repository.select_all()
+    return render_template("teams/new.html", clubs_in_league=clubs_in_league, teams=teams, clubs=clubs, league=league)
 
 # CREATE
 @teams_blueprint.route("/teams/<team_type>", methods=["POST"])
