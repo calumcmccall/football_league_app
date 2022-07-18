@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
     
-    <h1>Add a new match</h1>
+    <h1>Add a new {{ league.league_name }} match</h1>
 
-    <form action="/matches" method="POST">
+    <form action="/matches/{{ league.id }}" method="POST">
         <div>
             <label for="home_team">Home team:</label>
             <select name="home_team" id="home_team">
                 {% for team in teams %}
-                    <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                    {% if team.club.club_name in clubs and team_type == team.team_name %}
+                        <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
 
             <label for="away_team">Away team:</label>
             <select name="away_team" id="away_team">
                 {% for team in teams %}
-                    <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                    {% if team.club.club_name in clubs and team_type == team.team_name %}
+                        <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
 
@@ -24,13 +28,6 @@
 
             <label for="away_team_score">Away team score:</label>
             <input type="number" id="away_team_score" name="away_team_score">
-
-            <label for="league">League: </label>
-            <select name="league" id="league">
-                {% for league in leagues %}
-                    <option value="{{ league.id }}">{{ league.league_name }}</option>
-                {% endfor %}
-            </select>
             
             <input type="submit">
 
