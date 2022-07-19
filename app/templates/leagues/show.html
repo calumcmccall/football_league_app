@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1 class="under-nav">{{ league.league_name }}</h1>
+    <h1 class="under-nav" >{{ league.league_name }}</h1>
 
     <div class="league-show">
 
@@ -25,13 +25,13 @@
         <table class="league-fixtures">
             <h2>Fixtures</h2>
 
-            <tr>
+            <tr class="table-top">
                 <th>Home Team</th>
                 <th>Score</th>
                 <th>Away Team</th>
             </tr>
             {% for match in matches %}
-                <tr>
+                <tr class="matches">
                     <td>
                         {{
                             match.home_team.team_id.club.club_name
@@ -51,9 +51,9 @@
             <input type="submit" value="Create new match" class="button-style">
         </form>
 
-        <table>
-            <h2>League Table</h2>
-        </table>
+        <!-- <table> -->
+            <!-- <h2>League Table</h2> -->
+        <!-- </table> -->
 
     </div>
 

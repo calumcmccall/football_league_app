@@ -5,14 +5,17 @@
 }
 
 td, th {
-    padding: 10px;
+    padding: 12px 15px;
+    border: thin solid #272727;
+    border-bottom: thin solid #272727;
 }
 
-.home-clubs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.matches:hover {
     background-color: #EAC5D8;
+}
+
+.table-top {
+    background-color: #F49E4C;
 }
 
 .home-club {
@@ -30,8 +33,8 @@ td, th {
     margin: 50px;
     padding: 50px;
     border: 10px solid #555;
-    box-shadow: 0 5px 10px coral;
-    background-color: #EAC5D8;
+    box-shadow: 0 50px 50px coral;
+    background-color: #F49E4C;
 }
 
 header {
@@ -60,7 +63,7 @@ header a {
 }
 
 a:hover {
-    color: #97EAD2;
+    color: #EAC5D8;
 }
 
 .club-index-club {
@@ -100,7 +103,13 @@ a{
 }
 
 .under-nav {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding: 25px;
+    background-color: #97EAD2;
 }
 
 .league-clubs {

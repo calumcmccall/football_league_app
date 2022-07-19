@@ -24,18 +24,10 @@
                 {% endfor %}
 
                 {{ match.league.league_name }}
-
-                <form action="/matches/{{ match.id }}/delete" method="POST">
-                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
-                </form>
             </li>
 
         {% endfor %}
 
     </ul>
-
-    <form action="/matches/new">
-        <input type="submit" value="Create new match">
-    </form>
 
 {% endblock content %}
