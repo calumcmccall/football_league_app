@@ -36,3 +36,6 @@ def delete(id):
     sql = "DELETE FROM leagues WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def league_table():
+    return "Haha"

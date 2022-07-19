@@ -1,13 +1,13 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-    color: #272727;
+    color: #14397d;
     list-style: none;
 }
 
 td, th {
     padding: 12px 15px;
-    border: thin solid #272727;
-    border-bottom: thin solid #272727;
+    border: thin solid #14397d;
+    border-bottom: thin solid #14397d;
 }
 
 .matches:hover {
@@ -15,11 +15,13 @@ td, th {
 }
 
 .table-top {
-    background-color: #F49E4C;
+    background-color: #77b5d9;
 }
 
 .home-club {
-    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px;
 }
 
 .home-leagues {
@@ -32,9 +34,16 @@ td, th {
 .home-league {
     margin: 50px;
     padding: 50px;
-    border: 10px solid #555;
-    box-shadow: 0 50px 50px coral;
-    background-color: #F49E4C;
+    border: thin solid #14397d;
+    background-color: #77b5d9;
+}
+
+.home-league:hover {
+    background-color: #14397d;
+}
+
+.home-league:hover a {
+    color: #77b5d9;
 }
 
 header {
@@ -43,7 +52,7 @@ header {
     align-items: center;
     padding: 20px 50px;
     box-shadow: 0 1px 8px #ddd;
-    background-color: #F49E4C;
+    background-color: #77b5d9;
 }
 
 header h1 {
@@ -59,18 +68,17 @@ header li {
 
 header a {
     text-decoration: none;
-    transition: all 0.3s ease 0s;
 }
 
 a:hover {
-    color: #EAC5D8;
+    color: #14397d;
 }
 
 .club-index-club {
     list-style: none;
     display: inline-block;
     padding: 30px;
-    border: 10px solid #97EAD2;
+    border: 10px solid #d7eaf3;
 }
 
 .button-style{
@@ -88,8 +96,8 @@ a:hover {
 }
 
 .button-style:hover{
-    color: #FFFFFF;
-    background-color: #97EAD2;
+    color: #14397d;
+    background-color: #d7eaf3;
 }
 
 a{
@@ -109,7 +117,7 @@ a{
     align-items: center;
     margin-top: 0px;
     padding: 25px;
-    background-color: #97EAD2;
+    background-color: #d7eaf3;
 }
 
 .league-clubs {
