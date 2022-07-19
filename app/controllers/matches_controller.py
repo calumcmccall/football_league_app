@@ -12,9 +12,17 @@ matches_blueprint = Blueprint("matches", __name__)
 # INDEX
 @matches_blueprint.route("/matches")
 def matches():
-    matches = match_repository.select_all()
     teams = team_repository.select_all()
-    return render_template("matches/index.html", matches=matches, teams=teams)
+    leagues = league_repository.select_all()
+    league_matches = []
+    matches = []
+    for league in leagues:
+        matches = match_repository.matches_for_league(league.id)
+        league_matches.append({
+            "league_name": league.league_name,
+            "matches": matches
+        })
+    return render_template("matches/index.html", league_matches=league_matches, teams=teams, leagues=leagues)
 
 # NEW
 @matches_blueprint.route("/matches/new/<id>")
