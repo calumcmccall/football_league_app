@@ -3,26 +3,26 @@
     
     <h1>Clubs</h1>
 
+    <form action="/clubs/new">
+        <input type="submit" value="Create new club" class="button-style">
+    </form>
+
     <ul>
 
         {% for club in clubs %}
         
-            <li>
-                {{ club.club_name }}
+            <li class="club-index-club">
+                <a href="/clubs/{{ club.id }}">{{ club.club_name }}</a>
                 <form action="/clubs/{{ club.id }}/edit">
-                    <input type="submit" value="edit">
+                    <input type="submit" value="Edit" class="button-style">
                 </form>
                 <form action="/clubs/{{ club.id }}/delete" method="POST">
-                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" class="button-style">
                 </form>
             </li>
         
         {% endfor %}
 
     </ul>
-
-    <form action="/clubs/new">
-        <input type="submit" value="Create new club">
-    </form>
 
 {% endblock content %}

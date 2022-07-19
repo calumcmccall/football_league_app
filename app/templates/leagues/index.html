@@ -10,10 +10,10 @@
             <li>
                 <a href="/leagues/{{ league.id }}">{{ league.league_name }}</a>
                 <form action="/leagues/{{ league.id }}/edit">
-                    <input type="submit" value="edit">
+                    <input type="submit" value="edit" class="button-style">
                 </form>
                 <form action="/leagues/{{ league.id }}/delete" method="POST">
-                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')">
+                    <input type="submit" value="delete" onclick="return confirm('Are you sure?')" class="button-style">
                 </form>
             </li>
 
@@ -22,7 +22,7 @@
     </ul>
 
     <form action="/leagues/new">
-        <input type="submit" value="Create new league">
+        <input type="submit" value="Create new league" class="button-style">
     </form>
 
 {% endblock content %}

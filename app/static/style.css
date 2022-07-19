@@ -1,3 +1,94 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #272727;
+}
+
 td, th {
     padding: 10px;
+}
+
+.home-clubs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAC5D8;
+}
+
+.home-club {
+    margin: 10px;
+}
+
+.home-leagues {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.home-league {
+    margin: 50px;
+    padding: 50px;
+    border: 10px solid #555;
+    box-shadow: 0 5px 10px coral;
+    background-color: #EAC5D8;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+    background-color: #F49E4C;
+}
+
+header h1 {
+    margin-right: auto;
+    font-size: 1.5em;   
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+header a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+a:hover {
+    color: #97EAD2;
+}
+
+.club-index-club {
+    list-style: none;
+    display: inline-block;
+    padding: 30px;
+    border: 10px solid #97EAD2;
+}
+
+.button-style{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.button-style:hover{
+    color: #FFFFFF;
+    background-color: #97EAD2;
+}
+
+a{
+    text-decoration: none;
+    color: #272727;
 }
