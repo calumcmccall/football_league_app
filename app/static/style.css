@@ -1,6 +1,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     color: #272727;
+    list-style: none;
 }
 
 td, th {
@@ -91,4 +92,27 @@ a:hover {
 a{
     text-decoration: none;
     color: #272727;
+}
+
+.league-show {
+    display: flex;
+    flex-direction: column;
+}
+
+.under-nav {
+    text-align: center;
+}
+
+.league-clubs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.league-club {
+    margin: 10px;
+}
+
+.league-fixtures {
+    text-align: center;
 }

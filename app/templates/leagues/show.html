@@ -1,56 +1,60 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>{{ league.league_name }}</h1>
+    <h1 class="under-nav">{{ league.league_name }}</h1>
 
-    <h2>Clubs</h2>
-    <ul>
-        {% for team in teams %}
+    <div class="league-show">
 
-            {% if team.team_name == league.team_type %}
-                <li>
-                    <a href="/clubs/{{ team.club.id }}">{{ team.club.club_name }}</a>
-                </li>
-            {% endif %}
+        <h2>Clubs</h2>
+        <ul class="league-clubs">
+            {% for team in teams %}
 
-        {% endfor %}
-    </ul>
+                {% if team.team_name == league.team_type %}
+                    <li class="league-club">
+                        <a href="/clubs/{{ team.club.id }}">{{ team.club.club_name }}</a>
+                    </li>
+                {% endif %}
 
-    <form action="/teams/new/{{ league.id }}">
-        <input type="submit" value="Add a club to this league" class="button-style">
-    </form>
+            {% endfor %}
+        </ul>
 
-    <table>
-        <h2>Fixtures</h2>
+        <form action="/teams/new/{{ league.id }}">
+            <input type="submit" value="Add a club to this league" class="button-style">
+        </form>
+
+        <table class="league-fixtures">
+            <h2>Fixtures</h2>
+
+            <tr>
+                <th>Home Team</th>
+                <th>Score</th>
+                <th>Away Team</th>
+            </tr>
+            {% for match in matches %}
+                <tr>
+                    <td>
+                        {{
+                            match.home_team.team_id.club.club_name
+                        }}
+                    </td>
+                    <td> {{ match.home_team_score}} - {{ match.away_team_score }}  </td>
+                    <td>
+                        {{
+                            match.away_team.team_id.club.club_name
+                        }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
 
         <form action="/matches/new/{{ league.id }}">
             <input type="submit" value="Create new match" class="button-style">
         </form>
 
-        <tr>
-            <th>Home Team</th>
-            <th>Score</th>
-            <th>Away Team</th>
-        </tr>
-        {% for match in matches %}
-            <tr>
-                <td>
-                    {{
-                        match.home_team.team_id.club.club_name
-                    }}
-                </td>
-                <td> {{ match.home_team_score}} - {{ match.away_team_score }}  </td>
-                <td>
-                    {{
-                        match.away_team.team_id.club.club_name
-                    }}
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+        <table>
+            <h2>League Table</h2>
+        </table>
 
-    <table>
-        <h2>League Table</h2>
-    </table>
+    </div>
 
 {% endblock content %}

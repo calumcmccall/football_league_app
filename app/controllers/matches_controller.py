@@ -44,7 +44,7 @@ def create_match(id):
     new_match = Match(home_team_for_match, away_team_for_match, home_team_score, away_team_score, league)
     
     match_repository.save(new_match)
-    return redirect("/matches")
+    return redirect("/leagues/"+id)
 
 # DELETE
 @matches_blueprint.route("/matches/<id>/delete", methods=["POST"])

@@ -24,14 +24,14 @@ def new_team(id):
     return render_template("teams/new.html", clubs_in_league=clubs_in_league, teams=teams, clubs=clubs, league=league)
 
 # CREATE
-@teams_blueprint.route("/teams/<team_type>", methods=["POST"])
-def create_team(team_type):
+@teams_blueprint.route("/teams/<team_type>/<id>", methods=["POST"])
+def create_team(team_type, id):
     team_name = team_type
     club_id = request.form["club_id"]
     club = club_repository.select(club_id)
     new_team = Team(team_name, club)
     team_repository.save(new_team)
-    return redirect("/teams")
+    return redirect("/leagues/"+id)
 
 # EDIT
 @teams_blueprint.route("/teams/<id>/edit")
