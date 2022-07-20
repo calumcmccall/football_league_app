@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 from models.league import League
 
+import match_repository
+
 def select_all():
     leagues = []
     sql = "SELECT * FROM leagues ORDER BY league_name"
@@ -37,5 +39,6 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def league_table():
+def league_table(id):
+    all_matches_for_league = match_repository.matches_for_league(id)
     return "Haha"
