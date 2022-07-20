@@ -54,3 +54,16 @@ def clubs_in_league(team_type):
         clubs_in_league.append(result["club_name"])
 
     return clubs_in_league
+
+def clubs_and_teams_in_league(team_type):
+    clubs_in_league = []
+
+    sql = "SELECT clubs.club_name FROM clubs INNER JOIN teams on clubs.id = teams.club_id WHERE teams.team_name LIKE %s"
+    values = [team_type]
+    
+    results = run_sql(sql, values)
+
+    for result in results:
+        clubs_in_league.append(result["club_name"])
+
+    return clubs_in_league

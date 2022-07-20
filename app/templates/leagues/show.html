@@ -52,8 +52,8 @@
         </form>
 
         <table>
-            <h2 class="table-top">League Table</h2>
-            <tr>
+            <h2>League Table</h2>
+            <tr class="table-top">
                 <th>Position</th>
                 <th>Club</th>
                 <th>Played</th>
@@ -65,23 +65,21 @@
                 <th>GD</th>
                 <th>Points</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Aberdeen</td>
-                <th>5</th>
-                <th>3</th>
-                <th>0</th>
-                <th>2</th>
-                <th>8</th>
-                <th>9</th>
-                <th>-1</th>
-                <th>9</th>
-            </tr>
             {% for club in league_table %}
-                
+                <tr class="league-table">
+                    <td>1</td>
+                    <td>{{club.club}}</td>
+                    <th>{{club.played}}</th>
+                    <th>{{club.wins}}</th>
+                    <th>{{club.draws}}</th>
+                    <th>{{club.losses}}</th>
+                    <th>{{club.gf}}</th>
+                    <th>{{club.ga}}</th>
+                    <th>{{club.gd}}</th>
+                    <th>{{club.points}}</th>
+                </tr>
             {% endfor %}
         </table>
-
     </div>
 
 {% endblock content %}

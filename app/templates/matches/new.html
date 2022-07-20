@@ -18,7 +18,9 @@
             <select name="away_team" id="away_team">
                 {% for team in teams %}
                     {% if team.club.club_name in clubs and team_type == team.team_name %}
-                        <option value="{{ team.id }}">{{ team.club.club_name }}</option>
+                        <option {% if loop.index == 2 %}
+                            selected
+                        {% endif %} value="{{ team.id }}">{{ team.club.club_name }}</option>
                     {% endif %}
                 {% endfor %}
             </select>

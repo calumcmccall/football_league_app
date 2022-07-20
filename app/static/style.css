@@ -14,6 +14,10 @@ td, th {
     background-color: #EAC5D8;
 }
 
+.league-table:hover {
+    background-color: #EAC5D8;
+}
+
 .table-top {
     background-color: #77b5d9;
 }
