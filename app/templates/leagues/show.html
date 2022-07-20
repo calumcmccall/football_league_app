@@ -51,9 +51,36 @@
             <input type="submit" value="Create new match" class="button-style">
         </form>
 
-        <!-- <table> -->
-            <!-- <h2>League Table</h2> -->
-        <!-- </table> -->
+        <table>
+            <h2 class="table-top">League Table</h2>
+            <tr>
+                <th>Position</th>
+                <th>Club</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Aberdeen</td>
+                <th>5</th>
+                <th>3</th>
+                <th>0</th>
+                <th>2</th>
+                <th>8</th>
+                <th>9</th>
+                <th>-1</th>
+                <th>9</th>
+            </tr>
+            {% for club in league_table %}
+                
+            {% endfor %}
+        </table>
 
     </div>
 

@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS match_day_teams;
+DROP TABLE IF EXISTS league_tables;
 DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS clubs;
 DROP TABLE IF EXISTS matches;
@@ -7,7 +8,7 @@ DROP TABLE IF EXISTS leagues;
 CREATE TABLE leagues (
     id SERIAL PRIMARY KEY,
     league_name VARCHAR(255),
-    team_type VARCHAR(255),
+    team_type VARCHAR(255)
 );
 
 CREATE TABLE clubs (
@@ -33,4 +34,18 @@ CREATE TABLE matches (
     home_team_score INT,
     away_team_score INT,
     league_id INT REFERENCES leagues(id)
+);
+
+CREATE TABLE league_tables (
+    id SERIAL PRIMARY KEY,
+    league_id INT REFERENCES leagues(id),
+    team_id INT REFERENCES teams(id),
+    played INT,
+    won INT,
+    drawn INT,
+    lost INT,
+    gf INT,
+    ga INT,
+    gd INT,
+    points INT
 );

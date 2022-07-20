@@ -35,6 +35,7 @@ def save(match):
     results = run_sql(sql, values)
     id = results[0]["id"]
     match.id = id
+    # CALCULATE LEAGUE TABLE
 
 def update(match):
     sql = "UPDATE matches SET (home_team, away_team, home_team_score, away_team_score, league_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
