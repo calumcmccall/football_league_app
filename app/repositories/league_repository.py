@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.league import League
 
-import match_repository
+import repositories.match_repository as match_repository
 
 def select_all():
     leagues = []
@@ -41,4 +41,6 @@ def delete(id):
 
 def league_table(id):
     all_matches_for_league = match_repository.matches_for_league(id)
-    return "Haha"
+
+    
+    return "Haha as if"

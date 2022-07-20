@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS leagues;
 CREATE TABLE leagues (
     id SERIAL PRIMARY KEY,
     league_name VARCHAR(255),
-    team_type VARCHAR(255)
+    team_type VARCHAR(255),
 );
 
 CREATE TABLE clubs (
