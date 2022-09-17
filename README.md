@@ -1,6 +1,8 @@
 # Football League App
 
-This is a Python web application for managing the fixtures and resulting league tables for football clubs.
+This is a Python web application for managing the fixtures and resulting league tables for football clubs, holding the information in a database.
+
+The application was written using Python, Flask, PostgreSQL and the pyscopg library.
 
 ## App
 
