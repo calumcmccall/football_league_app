@@ -14,6 +14,8 @@ Within a league all the clubs participating are displayed, as well as their matc
 
 <img width="1440" alt="Screenshot 2022-09-17 at 13 43 37" src="https://user-images.githubusercontent.com/12415524/190857697-10e4f707-5b4b-4531-a15d-2a00ab8b5076.png">
 
+User submitted matches are used to calculate the league table based on results
+
 <img width="1440" alt="Screenshot 2022-09-17 at 13 44 26" src="https://user-images.githubusercontent.com/12415524/190857703-28fcb017-286e-4ae1-a6e3-52ee66c2c4e5.png">
 
 <img width="1440" alt="Screenshot 2022-09-17 at 13 45 09" src="https://user-images.githubusercontent.com/12415524/190857705-f311e170-9b3c-4909-8e60-ee838e04a0c8.png">
