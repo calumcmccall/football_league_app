@@ -18,6 +18,8 @@ User submitted matches are used to calculate the league table based on results
 
 <img width="1440" alt="Screenshot 2022-09-17 at 13 44 26" src="https://user-images.githubusercontent.com/12415524/190857703-28fcb017-286e-4ae1-a6e3-52ee66c2c4e5.png">
 
+Clubs don't need to participate in every league and is user dictated
+
 <img width="1440" alt="Screenshot 2022-09-17 at 13 45 09" src="https://user-images.githubusercontent.com/12415524/190857705-f311e170-9b3c-4909-8e60-ee838e04a0c8.png">
 
 Within a club you view the fixtures of all of their teams across different leagues
